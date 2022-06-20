@@ -19,7 +19,7 @@ app.get('/dishes',(req,res,next)=>{
 });
 
 app.post('/dishes',(req,res,next)=>{
-    res.end('will add the dish'+req.body.name + 'will details' + req.body.description);
+    res.end('will add the dish '+req.body.name + ' will details ' + req.body.description);
 });
 
 app.put('/dishes',(req,res,next)=>{
@@ -32,12 +32,12 @@ app.delete('/dishes',(req,res,next)=>{
 
 
 app.get('/dishes/:dishId',(req,res,next)=>{
-    res.end('will send details of dish : '+req.params.dishId+ 'to you!');
+    res.end('will send details of dish : '+req.params.dishId+ ' to you!');
 });
 
 app.post('/dishes/:dishId',(req,res,next)=>{
     req.statusCode = 403;
-    res.end('POST operation not supported on /dishes/'+req.params.dishId );
+    res.end('POST operation not supported on /dishes/ '+req.params.dishId );
 });
 
 app.put('/dishes/:dishId',(req,res,next)=>{
@@ -45,7 +45,7 @@ app.put('/dishes/:dishId',(req,res,next)=>{
     res.end('will update this dishId: '+req.body.name + 'with details: ' + req.body.description)
 });
 app.delete('/dishes/:dishId',(req,res,next)=>{
-    res.end('Deleting all the dishes');
+    res.end('Deleting dish: '+ req.params.dishId);
 });
 
 
